@@ -1,0 +1,271 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+  --roboto: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--off-white);
+  font-family: var(--roboto);
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px;
+  border: 1px solid var(--offWhite);
+  border-radius: 20px 20px 220px 20px;
+  width: 768px;
+}
+
+.input-container {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  /* border: 2px solid rebeccapurple; */
+}
+
+form {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  /* border: 2px dotted saddlebrown; */
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.form-element label {
+  text-transform: uppercase;
+  color: var(--smokey-grey);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.form-element input {
+  height: 60px;
+  border-radius: 5px;
+  border: 1px solid var(--light-grey);
+  padding: 20px;
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 900;
+  outline: none;
+}
+
+.form-element.error label {
+  color: var(--light-red);
+}
+
+.form-element.error input {
+  border: 1px solid var(--light-red);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-element input:focus {
+  border: 1px solid var(--smokey-grey);
+}
+
+.error-empty,
+.error-input,
+.error-form {
+  display: none;
+  color: var(--light-red);
+  font-size: 14px;
+  font-family: var(--roboto);
+  font-style: italic;
+  position: absolute;
+  margin-top: 90px;
+  font-weight: lighter;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.shake {
+  animation: shake 1s ease;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 30px;
+  /* border: 2px solid salmon; */
+}
+
+button {
+  display: flex;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 2px solid var(--purple);
+  background-color: var(--purple);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin-left: -5px;
+}
+
+button:hover {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--purple);
+  }
+}
+
+img {
+  display: flex;
+  width: 40px;
+  height: 40px;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: var(--light-grey);
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.result-container {
+  height: 67%;
+  font-size: 80px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 1000;
+  font-style: italic;
+}
+
+.result-container span[id$="-result"] {
+  color: var(--purple);
+  width: 100px;
+  font-weight: 1000;
+}
+
+.result-container .result-text {
+  position: flex;
+  margin-left: 5px;
+  color: var(--off-black);
+}
+
+.animated-number {
+  --start-value: 0;
+  --end-value: 100;
+  animation: count 2.5s forwards;
+}
+
+@keyframes count {
+  from {
+    counter-reset: number var(--start-value);
+  }
+  to {
+    counter-reset: number var(--end-value);
+  }
+}
+
+.animated-number::after {
+  content: counter(number);
+  counter-increment: number 1;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+}
+.attribution a {
+  color: var(--purple);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    overflow: scroll;
+  }
+  main {
+    width: 100%;
+  }
+  form {
+    gap: 15px;
+  }
+  .input-container {
+    width: 100%;
+  }
+  .form-element input {
+    padding: 10px;
+  }
+  button {
+    margin-left: -60%;
+    margin-top: -10px;
+  }
+
+  .error-empty,
+  .error-input,
+  .error-form {
+    font-size: 10px;
+  }
+
+  hr {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .result-container {
+    font-size: 50px;
+    margin-top: 20px;
+  }
+}

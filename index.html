@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <main>
+      <div class="input-container">
+        <form>
+          <div class="form-element">
+            <label class="label" for="day-input">Day</label>
+            <input placeholder="DD" type="number" id="day-input" />
+            <p class="error-empty" id="error-empty-day">
+              This field is required.
+            </p>
+            <p class="error-input" id="error-input-day">Must be a valid day.</p>
+            <p class="error-form" id="error-form">Must be a valid date.</p>
+          </div>
+
+          <div class="form-element">
+            <label class="label" for="month-input">Month</label>
+            <input placeholder="MM" type="number" id="month-input" />
+            <p class="error-empty" id="error-empty-month">
+              This field is required.
+            </p>
+            <p class="error-input" id="error-input-month">
+              Must be a valid month.
+            </p>
+          </div>
+
+          <div class="form-element">
+            <label class="label" for="year-input">Year</label>
+            <input placeholder="YYYY" type="number" id="year-input" />
+            <p class="error-empty" id="error-empty-year">
+              This field is required.
+            </p>
+            <p class="error-input" id="error-input-year">Must be in the past</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="button-container">
+        <hr />
+        <button class="submit-btn" id="submit-btn">
+          <img src="./assets/images/icon-arrow.svg" />
+        </button>
+      </div>
+
+      <div class="result-container">
+        <p>
+          <span id="year-result">- -</span
+          ><span class="result-text">years</span>
+        </p>
+        <p>
+          <span id="month-result">- -</span
+          ><span class="result-text">months</span>
+        </p>
+        <p>
+          <span id="day-result">- -</span><span class="result-text">days</span>
+        </p>
+      </div>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/sherimin">@sherimin</a>.
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
