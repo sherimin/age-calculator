@@ -32,10 +32,16 @@ Users should be able to:
 
 ### Screenshot
 
+
+
+https://github.com/user-attachments/assets/e9e1b68c-30b8-4059-9587-4af492124cc0
+
+
+
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub Repo](https://github.com/sherimin/age-calculator)
+- Live Site URL: [Live Site](https://sherimin.github.io/age-calculator/)
 
 ## My process
 
